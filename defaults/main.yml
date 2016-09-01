@@ -1,0 +1,26 @@
+---
+# defaults file for postgresql
+
+docker_add_repository: false
+
+docker_apt_repository:
+  - key_id: "58118E89F3A912897C070ADBF76221572C52609D"
+    keyserver: hkp://pgp.mit.edu:80
+    repository_url: "deb https://apt.dockerproject.org/repo ubuntu-xenial main"
+
+docker_ignore_start_errors: false
+
+docker_deb_packages:
+  - docker.io
+  - python-docker
+  - docker-compose
+
+docker_service_name: docker
+
+docker_yum_packages:
+  - docker
+  - python-docker
+
+
+docker_service_enable: true
+docker_service_state: started

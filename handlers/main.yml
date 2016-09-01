@@ -1,0 +1,4 @@
+- name: Restart Docker Engine
+  service:
+    name: '{{ docker_service_name }}'
+    state: restarted

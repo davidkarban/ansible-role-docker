@@ -1,0 +1,15 @@
+---
+- name: Add apt repository
+  apt_key:
+    id: "{{ item.key_id }}"
+    keyserver: "{{ item.keyserver }}"
+    state: "{{ item.state|default('present') }}"
+  with_items: docker_apt_repository
+  when: docker_add_repository and ansible_os_family == 'Debian'
+
+- name: Add apt repository
+  apt_repository:
+    repo: "{{ item.repository_url }}"
+    state: "{{ item.state|default('present') }}"
+  with_items: docker_apt_repository
+  when: docker_add_repository and ansible_os_family == 'Debian'

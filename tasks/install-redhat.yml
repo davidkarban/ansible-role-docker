@@ -1,0 +1,10 @@
+---
+- name: 'Check ansible version >= 2.0'
+  assert:
+    that:
+    - 'ansible_version.major is number'
+    - 'ansible_version.major >= 2'
+
+- name: Add yum repository
+  fail:
+    mesg: "This should be prepared later"
