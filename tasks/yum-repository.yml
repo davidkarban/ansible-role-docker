@@ -1,4 +1,4 @@
 ---
 - name: Add yum repository
-  debug:
-    mesg: "TODO: TODO"
+  fail:
+    mesg: "TODO: This should be fixed (some day)"

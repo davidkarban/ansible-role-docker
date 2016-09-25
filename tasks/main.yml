@@ -22,7 +22,7 @@
 
 - name: Install on RedHat
   include: install-redhat.yml
-  when: ansible_os_family == 'RedHt'
+  when: ansible_os_family == 'RedHat'
 
 - name: Enable service
   service:
