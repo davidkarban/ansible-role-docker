@@ -24,6 +24,10 @@
   include: install-redhat.yml
   when: ansible_os_family == 'RedHat'
 
+- name: Setup docker group
+  include: setup-docker-group.yml
+  when: docker_create_group
+
 - name: Enable service
   service:
     name: "{{ docker_service_name }}"

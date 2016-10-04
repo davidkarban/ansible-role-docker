@@ -24,3 +24,6 @@ docker_yum_packages:
 
 docker_service_enable: true
 docker_service_state: started
+
+docker_create_group: true
+docker_group_members: []
