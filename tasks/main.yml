@@ -33,5 +33,4 @@
     name: "{{ docker_service_name }}"
     enabled: "{{ docker_service_enable }}"
     state: "{{ docker_service_state }}"
-  notify: restart postgresql
   ignore_errors: '{{ docker_ignore_start_errors }}'
