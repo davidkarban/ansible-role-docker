@@ -28,7 +28,13 @@
   include: setup-docker-group.yml
   when: docker_create_group
 
-- name: Enable service
+- name: Setup Docker configs
+  copy:
+    dest: '{{ item.name }}'
+    content: '{{ item.content }}'
+  with_items: '{{ docker_config_files }}'
+
+- name: Enable Docker service
   service:
     name: "{{ docker_service_name }}"
     enabled: "{{ docker_service_enable }}"

@@ -27,3 +27,9 @@ docker_service_state: started
 
 docker_create_group: true
 docker_group_members: []
+
+docker_config_files: []
+#docker_config_files          # disable bridge networking
+#  - name: /etc/sysconfig/docker-network
+#    content: |
+#        DOCKER_NETWORK_OPTIONS="--bridge=none"
