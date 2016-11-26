@@ -1,4 +1,10 @@
 ---
 - name: Add yum repository
-  fail:
-    mesg: "TODO: This should be fixed (some day)"
+  yum_repository:
+    name: dockerproject
+    description: Docker.io repositoru
+    state: present
+    enabled: true
+    baseurl: https://yum.dockerproject.org/repo/main/centos/7/
+    gpgcheck: true
+    gpgkey: https://yum.dockerproject.org/gpg
