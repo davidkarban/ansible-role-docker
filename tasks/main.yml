@@ -33,6 +33,9 @@
     dest: '{{ item.name }}'
     content: '{{ item.content }}'
   with_items: '{{ docker_config_files }}'
+  notify: systemctl daemon-reload
+
+- meta: flush_handlers
 
 - name: Enable Docker service
   service:
