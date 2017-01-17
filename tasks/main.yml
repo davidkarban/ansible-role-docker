@@ -28,6 +28,11 @@
   include: setup-docker-group.yml
   when: docker_create_group
 
+- name: Create Docker config directory
+  file:
+    path: /etc/docker
+    state: directory
+
 - name: Setup Docker configs
   copy:
     dest: '{{ item.name }}'
