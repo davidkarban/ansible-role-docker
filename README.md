@@ -21,7 +21,7 @@ Jinja `combine` filter - contained in Ansible 2.0.
 
     - hosts: all
       roles:
-        - role: docker
+        - role: VerosK.docker
 
 ## License
 
