@@ -18,8 +18,16 @@ docker_deb_packages:
 docker_service_name: docker
 
 docker_yum_packages:
-  - docker
+  - docker-ce
   - python-docker
+
+docker_yum_repos:
+  - name: docker-ce-stable
+    description: Docker CE Stable - $basearch
+    baseurl: https://download.docker.com/linux/centos/7/$basearch/stable
+    #enabled: 1
+    gpgcheck: 1
+    gpgkey: https://download.docker.com/linux/centos/gpg
 
 
 docker_service_enable: true

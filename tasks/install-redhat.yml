@@ -8,6 +8,7 @@
 - name: Set-up yum-repository (when needed)
   include: yum-repository.yml
   when: docker_add_repository
+  tags: docker_yum_repo
 
 - name: Install docker
   yum:

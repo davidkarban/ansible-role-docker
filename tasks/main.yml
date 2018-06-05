@@ -33,6 +33,12 @@
     path: /etc/docker
     state: directory
 
+- name: Create directories for config
+  file:
+    path: '{{ item.name | dirname }}'
+    state: directory
+  with_items: '{{ docker_config_files }}'
+
 - name: Setup Docker configs
   copy:
     dest: '{{ item.name }}'
