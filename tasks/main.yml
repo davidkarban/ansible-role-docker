@@ -48,6 +48,9 @@
 
 - meta: flush_handlers
 
+- include: setup-docker-compose.yml
+  when: docker_compose
+
 - name: Enable Docker service
   service:
     name: "{{ docker_service_name }}"

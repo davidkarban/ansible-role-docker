@@ -1,7 +1,7 @@
 ---
 # defaults file for postgresql
 
-docker_add_repository: false
+docker_add_repository: true
 
 docker_apt_repository:
   - key_id: "58118E89F3A912897C070ADBF76221572C52609D"
@@ -37,6 +37,14 @@ docker_create_group: true
 docker_group_members: []
 
 docker_config_files: []
+
+docker_compose: true # add docker-compose
+docker_compose_version: "1.23.1"
+docker_compose_bin: /usr/bin/docker-compose
+docker_compose_os: '{{ ansible_system }}'
+docker_compose_arch: '{{ ansible_architecture|default("x86_84") }}'
+docker_compose_url: 'https://github.com/docker/compose/releases/download/1.23.1/docker-compose-{{ docker_compose_os }}-{{ docker_compose_arch }}'
+
 #docker_config_files          # disable bridge networking
 #  - name: /etc/sysconfig/docker-network
 #    content: |
