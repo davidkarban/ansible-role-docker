@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/VerosK/ansible-role-docker.svg?branch=master)](https://travis-ci.org/VerosK/ansible-role-docker)
+
 #  Ansible Role for Docker
 
 
@@ -5,7 +7,7 @@ Ansible Role for DockerInstallation.   ( work-in-progress )
 
 ##  Requirements
 
-This role require Ansible 2.0 or higher.
+This role require Ansible 2.5 or higher.
 
 This role was designed on Ubuntu 16.04 LTS and Centos 7. 
 
@@ -30,6 +32,6 @@ Jinja `combine` filter - contained in Ansible 2.0.
 
 ### Author Information
 
-- [Veros Kaplan](https://github.com/verosk/)
-- Sponsored by [Twisto](http://twisto.cz/)
+- [Veros Kaplan](https://github.com/VerosK/)
+- Sponsored by [Twisto](http://twisto.cz/) and [Moravian Library](http://mzk.cz/).
 

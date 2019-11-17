@@ -12,16 +12,15 @@
 
 - name: Install docker
   yum:
-    name: "{{ item }}"
+    name: "{{ docker_yum_packages }}"
     state: "present"
-  with_items: '{{ docker_yum_packages }}'
   notify: Restart Docker Engine
 
 - name: "Add insecure_registry"
   lineinfile:
     dest: '{{ docker_config }}'
-    line: '{{docker_insecure_registry_key}}="--insecure-registry {{docker_insecure_registry}}"'
-    insertafter: '^#{{docker_insecure_registry_key}}'
+    line: '{{ docker_insecure_registry_key }}="--insecure-registry {{ docker_insecure_registry }}"'
+    insertafter: '^#{{ docker_insecure_registry_key }}'
     backup: true
   when: docker_insecure_registry is defined
   notify: Restart Docker Engine
