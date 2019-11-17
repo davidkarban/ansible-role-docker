@@ -38,14 +38,16 @@ docker_group_members: []
 
 docker_config_files: []
 
-docker_compose: true # add docker-compose
+docker_compose: true  # add docker-compose
 docker_compose_version: "1.23.1"
 docker_compose_bin: /usr/bin/docker-compose
 docker_compose_os: '{{ ansible_system }}'
 docker_compose_arch: '{{ ansible_architecture|default("x86_84") }}'
-docker_compose_url: 'https://github.com/docker/compose/releases/download/1.23.1/docker-compose-{{ docker_compose_os }}-{{ docker_compose_arch }}'
+_docker_compose_src:
+docker_compose_url:
+  '{{ _docker_compose_src }}/1.23.1/docker-compose-{{ docker_compose_os }}-{{ docker_compose_arch }}'
 
-#docker_config_files          # disable bridge networking
+# docker_config_files          # disable bridge networking
 #  - name: /etc/sysconfig/docker-network
 #    content: |
 #        DOCKER_NETWORK_OPTIONS="--bridge=none"

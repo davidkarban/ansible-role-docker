@@ -2,8 +2,8 @@
 - name: 'Check ansible version >= 2.0'
   assert:
     that:
-    - 'ansible_version.major is number'
-    - 'ansible_version.major >= 2'
+      - 'ansible_version.major is number'
+      - 'ansible_version.major >= 2'
 
 - name: Set-up yum-repository (when needed)
   include: yum-repository.yml
