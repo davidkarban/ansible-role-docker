@@ -1,5 +1,11 @@
 ---
-- name: Add apt repository
+- name: Ensure gpg (required for apt-key)
+  apt:
+    name: gpg
+    state: present
+  when: docker_add_repository and ansible_os_family == 'Debian'
+
+- name: Add apt repository key
   apt_key:
     id: "{{ item.key_id }}"
     url: "{{ item.key_url }}"
