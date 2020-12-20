@@ -42,7 +42,7 @@
 - name: Setup Docker configs
   copy:
     dest: '{{ item.name }}'
-    content: '{{ item.content }}'
+    content: '{{ item.content|string }}'
   with_items: '{{ docker_config_files }}'
   notify: systemctl daemon-reload
 
