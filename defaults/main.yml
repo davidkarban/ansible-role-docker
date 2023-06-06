@@ -33,7 +33,9 @@ docker_group_members: []
 
 docker_config_files: []
 
-docker_compose: true  # add docker-compose
+# remove docker-compose, as it is is in the docker_deb_packages
+
+docker_compose: false  # add docker-compose
 docker_compose_version: "1.24.1"
 docker_compose_bin: /usr/bin/docker-compose
 docker_compose_os: '{{ ansible_system }}'
