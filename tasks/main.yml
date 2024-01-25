@@ -17,15 +17,15 @@
         - '../vars'
 
 - name: Install on Debian
-  include: install-debian.yml
+  include_tasks: install-debian.yml
   when: ansible_os_family == 'Debian'
 
 - name: Install on RedHat
-  include: install-redhat.yml
+  include_tasks: install-redhat.yml
   when: ansible_os_family == 'RedHat'
 
 - name: Setup docker group
-  include: setup-docker-group.yml
+  include_tasks: setup-docker-group.yml
   when: docker_create_group
 
 - name: Create Docker config directory
@@ -48,7 +48,7 @@
 
 - meta: flush_handlers
 
-- include: setup-docker-compose.yml
+- include_tasks: setup-docker-compose.yml
   when: docker_compose
 
 - name: Enable Docker service
