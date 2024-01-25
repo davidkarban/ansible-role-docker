@@ -34,9 +34,8 @@ docker_group_members: []
 docker_config_files: []
 
 # remove docker-compose, as it is is in the docker_deb_packages
-
 docker_compose: false  # add docker-compose
-docker_compose_version: "1.24.1"
+docker_compose_version: "1.29.2"
 docker_compose_bin: /usr/bin/docker-compose
 docker_compose_os: '{{ ansible_system }}'
 docker_compose_arch: '{{ ansible_architecture|default("x86_84") }}'
