@@ -5,6 +5,12 @@
       - 'ansible_version.major is number'
       - 'ansible_version.major >= 2'
 
+- name: Include arch variables
+  include_vars: '{{ item }}'
+  with_first_found:
+    - files:
+        - 'arch-{{ ansible_architecture }}.yml'
+
 - name: "Include variables"
   include_vars: '{{ item }}'
   with_first_found:
