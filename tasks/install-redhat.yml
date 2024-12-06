@@ -6,7 +6,7 @@
       - 'ansible_version.major >= 2'
 
 - name: Set-up yum-repository (when needed)
-  include: yum-repository.yml
+  include_tasks: yum-repository.yml
   when: docker_add_repository
   tags: docker_yum_repo
 
